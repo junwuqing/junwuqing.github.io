@@ -59,6 +59,8 @@ Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 
 
 
 <body>
+    
+
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
@@ -337,7 +339,7 @@ Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -425,7 +427,6 @@ Hexo 是一个快速、简洁且高效的静态博客框架，它基于 Node.js 
 <p>根据自己的需求来下载32位或者64位的git</p>
 <p><img src="/2022/10/22/yong-hexo-git-da-jian-di-yi-ge-ge-ren-bo-ke-wang-zhan/13b341753992ed7ee76ed0d8b6df522.jpg"></p>
 <p>下载完毕后进行安装，一直点下一步即可。</p>
-<p><img src="/2022/10/22/yong-hexo-git-da-jian-di-yi-ge-ge-ren-bo-ke-wang-zhan/10/22/yong-hexo-git-da-jian-di-yi-ge-ge-ren-bo-ke-wang-zhan/69dd078be23b02de2eb189832542209.jpg"></p>
 <p><img src="/2022/10/22/yong-hexo-git-da-jian-di-yi-ge-ge-ren-bo-ke-wang-zhan/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20221022192324.jpg"></p>
 <p><img src="/2022/10/22/yong-hexo-git-da-jian-di-yi-ge-ge-ren-bo-ke-wang-zhan/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202210221923241.jpg"></p>
 <p><img src="/2022/10/22/yong-hexo-git-da-jian-di-yi-ge-ge-ren-bo-ke-wang-zhan/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_202210221923242.jpg"></p>
@@ -606,7 +607,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                         <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                 </div>
             </div>
@@ -654,7 +655,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="用hexo、git搭建第一个个人博客网站">
+                        <img src="/medias/featureimages/20.webp" class="responsive-img" alt="用hexo、git搭建第一个个人博客网站">
                         
                         <span class="card-title">用hexo、git搭建第一个个人博客网站</span>
                     </div>
@@ -700,7 +701,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="用hexo、git搭建第一个个人博客网站">
+                        <img src="/medias/featureimages/20.webp" class="responsive-img" alt="用hexo、git搭建第一个个人博客网站">
                         
                         <span class="card-title">用hexo、git搭建第一个个人博客网站</span>
                     </div>
@@ -948,13 +949,13 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/junwuqing" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:1275017708@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -964,7 +965,7 @@ hexo s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></sp
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1275017708" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1275017708" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1275017708" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
@@ -1131,6 +1132,15 @@ $(function () {
     
 
     
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
 
     <!-- 雪花特效 -->
     
@@ -1184,6 +1194,18 @@ $(function () {
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+
+    
+        <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js" />');
+        }
+        </script>
+    
+   
+        
 
 </body>
 
