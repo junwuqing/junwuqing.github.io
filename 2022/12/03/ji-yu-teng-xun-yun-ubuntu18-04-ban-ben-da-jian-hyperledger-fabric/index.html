@@ -389,7 +389,7 @@ sudo apt-get install git
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.7k
                 </div>
                 
 
@@ -471,7 +471,26 @@ go env -w GO111MODULE&#x3D;on<span aria-hidden="true" class="line-numbers-rows">
 <h3 id="1-5JQ"><a href="#1-5JQ" class="headerlink" title="1.5JQ"></a>1.5JQ</h3><p>⾃动安装JQ。</p>
 <pre class="line-numbers language-none"><code class="language-none">sudo apt-get install jq<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="1-6Hyperledger-Fabric安装与配置"><a href="#1-6Hyperledger-Fabric安装与配置" class="headerlink" title="1.6Hyperledger Fabric安装与配置"></a>1.6<strong>Hyperledger Fabric</strong>安装与配置</h3><p>新建HLF⽬录。</p>
+<h3 id="1-6nodejs"><a href="#1-6nodejs" class="headerlink" title="1.6nodejs"></a>1.6nodejs</h3><p>使用ubuntu自带apt-get安装，安装后使用node-v查看版本</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get install nodejs-legacy nodejs
+ 
+sudo apt-get install npm<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>升级nodejs版本，首先安装n模块</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install -g n<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>升级node.js到最新稳定版</p>
+<pre class="line-numbers language-none"><code class="language-none">n stable<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>PS：n后面也可以跟随版本号（用于升级或降级）比如：</p>
+<pre class="line-numbers language-none"><code class="language-none">n v16.2.0	&#x2F;&#x2F;后面的案例所需版本<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>下载完毕之后，使用n命令修改node版本，最后使用sudo node -v和sudo npm -v查看版本</p>
+<pre class="line-numbers language-none"><code class="language-none">n
+sudo node -v
+sudo npm -v<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="1-7Hyperledger-Fabric安装与配置"><a href="#1-7Hyperledger-Fabric安装与配置" class="headerlink" title="1.7Hyperledger Fabric安装与配置"></a>1.7<strong>Hyperledger Fabric</strong>安装与配置</h3><p>新建HLF⽬录。</p>
 <pre class="line-numbers language-none"><code class="language-none">mkdir hyperledger &#x2F;&#x2F;新建HLF⽬录
 cd hyperledger &#x2F;&#x2F;进⼊HLF⽬录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -1038,7 +1057,7 @@ export CORE_PEER_ADDRESS&#x3D;localhost:9051<span aria-hidden="true" class="line
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">15.1k</span>
+                        class="white-color">15.2k</span>
             
             
             
