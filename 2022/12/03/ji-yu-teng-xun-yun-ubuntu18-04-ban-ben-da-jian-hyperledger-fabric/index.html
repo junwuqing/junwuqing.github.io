@@ -433,14 +433,14 @@ sudo apt-get install git
 <pre class="line-numbers language-none"><code class="language-none">docker-compose --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>看到如下字样即可代表安装完毕</p>
-<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203234134602.png"></p>
+<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203234134602.png"></p>
 <p>然后我们就可以安装docker了</p>
 <pre class="line-numbers language-none"><code class="language-none">sudo apt-get -y install docker-compose<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>检查docker版本</p>
 <pre class="line-numbers language-none"><code class="language-none">docker --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203234317946.png"></p>
+<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203234317946.png"></p>
 <p>当然hyperledger fabric建议的版本为19.03.12，只要不小于这个版本基本都ok</p>
 <p>确保 Docker 守护程序正在运行。</p>
 <pre class="line-numbers language-none"><code class="language-none">sudo systemctl start docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -467,7 +467,7 @@ go env -w GO111MODULE&#x3D;on<span aria-hidden="true" class="line-numbers-rows">
 <p>查看安装情况。</p>
 <pre class="line-numbers language-none"><code class="language-none">go version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203234651629.png"></p>
+<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203234651629.png"></p>
 <h3 id="1-5JQ"><a href="#1-5JQ" class="headerlink" title="1.5JQ"></a>1.5JQ</h3><p>⾃动安装JQ。</p>
 <pre class="line-numbers language-none"><code class="language-none">sudo apt-get install jq<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -510,11 +510,11 @@ chmod +x install-fabric.sh<span aria-hidden="true" class="line-numbers-rows"><sp
 .&#x2F;network.sh up		&#x2F;&#x2F;开启网络<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>开启成功则出现如下结果：</p>
-<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203235154070.png"></p>
+<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203235154070.png"></p>
 <p>查看fabric⽹络状态。</p>
 <pre class="line-numbers language-none"><code class="language-none">docker ps -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203235251293.png"></p>
+<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203235251293.png"></p>
 <p>创建fabric⽹络channel。</p>
 <pre class="line-numbers language-none"><code class="language-none">.&#x2F;network.sh createChannel
 
