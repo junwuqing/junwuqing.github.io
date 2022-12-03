@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="将hexo部署到github上, somewei">
-    <meta name="description" content="将hexo部署到github上本文章属于半笔记半教程的零基础小白入门文，教你将 Hexo 部署到了 GitHub Pages，从而获得自己的静态博客网站。首先我们需要一个自己的github账号。
-1.创建github账号github官网：h">
+    <meta name="keywords" content="基于腾讯云ubuntu18.04版本搭建Hyperledger Fabric, somewei">
+    <meta name="description" content="基于腾讯云ubuntu18.04版本搭建Hyperledger Fabric1.搭建环境1.1git安装最新版本的git（如果尚未安装）
+sudo apt-get install git
+
+1.2cURL安装最新版本的cURL（如果尚未安装">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +20,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>将hexo部署到github上 | somewei</title>
+    <title>基于腾讯云ubuntu18.04版本搭建Hyperledger Fabric | somewei</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -337,12 +339,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">将hexo部署到github上</h1>
+                    <h1 class="description center-align post-title">基于腾讯云ubuntu18.04版本搭建Hyperledger Fabric</h1>
                 </div>
             </div>
         </div>
@@ -364,13 +366,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E9%83%A8%E7%BD%B2%E7%B1%BB/">
-                                <span class="chip bg-color">部署类</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -382,7 +380,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-26
+                    2022-12-03
                 </div>
                 
 
@@ -391,7 +389,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    849
+                    1.5k
                 </div>
                 
 
@@ -416,86 +414,182 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="将hexo部署到github上"><a href="#将hexo部署到github上" class="headerlink" title="将hexo部署到github上"></a>将hexo部署到github上</h1><p>本文章属于半笔记半教程的零基础小白入门文，教你将 Hexo 部署到了 <a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=GitHub&spm=1001.2101.3001.7020">GitHub</a> Pages，从而获得自己的静态博客网站。首先我们需要一个自己的github账号。</p>
-<h2 id="1-创建github账号"><a href="#1-创建github账号" class="headerlink" title="1.创建github账号"></a>1.创建github账号</h2><p>github官网：<a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a></p>
-<p>进入官网，点击sign up创建账号</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/7516cbd52de417df747237e94ca3720.jpg"></p>
-<p>然后填写邮箱</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/f83bdbc232f4b3b733aac88f953f88c.jpg"></p>
-<p>填写密码</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/e9ca019828165b2dad36438a8947e6c.jpg"></p>
-<p>填写github用户名<img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/cd73b7d53ed1a4103d51f900b783675.jpg"></p>
-<p>选择y或者n</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/e7013e39156107f118084430f2c7e8c.jpg"></p>
-<p>全部填写完进入下一步</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/be9b315d76b57459df71c72be89ee0c.jpg"></p>
-<p>根据自己的情况进行选择</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/c5e2e9e089882c4010eff2a1c292f27.jpg"></p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/7691ebfae468a55d6903ec58d4f1a89.jpg"></p>
-<p>最后选择完毕之后就创建好啦</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/ac7f524d08c6c58d26fe283c47e085f.jpg"></p>
-<h2 id="2-创建github仓库"><a href="#2-创建github仓库" class="headerlink" title="2.创建github仓库"></a>2.创建github仓库</h2><p>我们需要把在本地的博客文件部署到github上就需要存放在github的仓库中，所以我们需要先创建一个仓库。</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/0d5ab5f5f8f1dc61556645e2128448c.jpg"></p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/5df604c349ba7c2af7999cb5d5722c9.jpg"></p>
-<h2 id="3-一键生成SSH密钥"><a href="#3-一键生成SSH密钥" class="headerlink" title="3.一键生成SSH密钥"></a>3.一键生成SSH密钥</h2><h3 id="git-ssh的使用"><a href="#git-ssh的使用" class="headerlink" title="git_ssh的使用"></a>git_ssh的使用</h3><p>您需要在存放install.sh脚本的目录中,右键打开git bash运行以下命令:</p>
-<pre class="line-numbers language-none"><code class="language-none">.&#x2F;install.sh git_ssh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h1 id="基于腾讯云ubuntu18-04版本搭建Hyperledger-Fabric"><a href="#基于腾讯云ubuntu18-04版本搭建Hyperledger-Fabric" class="headerlink" title="基于腾讯云ubuntu18.04版本搭建Hyperledger Fabric"></a>基于腾讯云ubuntu18.04版本搭建Hyperledger Fabric</h1><h2 id="1-搭建环境"><a href="#1-搭建环境" class="headerlink" title="1.搭建环境"></a>1.搭建环境</h2><h3 id="1-1git"><a href="#1-1git" class="headerlink" title="1.1git"></a>1.1git</h3><p>安装最新版本的git（如果尚未安装）</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get install git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/37d0e386ad0e1de1fef8ef48cfb6b7e.jpg"></p>
-<p>可以看到会有四条可执行命令,输入对应数字可以执行对应的命令</p>
-<pre class="line-numbers language-none"><code class="language-none">1)Key
-2)SSH
-3)Verify-github
-4)Verify-coding<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-2cURL"><a href="#1-2cURL" class="headerlink" title="1.2cURL"></a>1.2cURL</h3><p>安装最新版本的<a target="_blank" rel="noopener" href="https://curl.haxx.se/download.html">cURL</a>（如果尚未安装）。</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get install curl<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">1)Key 执行1后可以一键生成秘钥
-如果你的电脑已经存在秘钥,程序将会自动退出
+<h3 id="1-3dokcer"><a href="#1-3dokcer" class="headerlink" title="1.3dokcer"></a>1.3dokcer</h3><p>由于博主亲身体验，建议先安装docker-compose再安装docker，并且hyperledger fabric需要1.27.2版本的docker-compose，所以我们先输入下面这行命令</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo curl -L &quot;https:&#x2F;&#x2F;github.com&#x2F;docker&#x2F;compose&#x2F;releases&#x2F;download&#x2F;1.27.2&#x2F;docker-compose-$(uname -s)-$(uname -m)&quot; -o &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-2)SSH 执行2后可以查看你电脑中已生成的秘钥]
+<p>然后对<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E4%BA%8C%E8%BF%9B%E5%88%B6&spm=1001.2101.3001.7020">二进制</a>文件执行权限</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo chmod +x &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-3)Verify-github 执行3后可以检查秘钥是否配置github成功
+<p>如果这一步遇到问题，可以创建/usr/bin路径建立链接</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo ln -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;docker-compose &#x2F;usr&#x2F;bin&#x2F;docker-compose<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-4)Verify-coding 执行4后可以检查秘钥是否配置coding成功
+<p>最后检查版本</p>
+<pre class="line-numbers language-none"><code class="language-none">docker-compose --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-生成秘钥后别忘记将秘钥添加到账号里,否则秘钥不会配置成功<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>看到如下字样即可代表安装完毕</p>
+<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203234134602.png"></p>
+<p>然后我们就可以安装docker了</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get -y install docker-compose<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>博主这里已经创建过SSH密钥了，所以不必在意。</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/2902c16ec516a528bfe48347066dc80.jpg"></p>
-<h2 id="4-将博客部署到github上"><a href="#4-将博客部署到github上" class="headerlink" title="4.将博客部署到github上"></a>4.将博客部署到github上</h2><p>我们首先需要在GitHub <strong>头像下的 Settings</strong> 里找到添加 SSH key，点击<strong>New SSH key</strong> 。</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/9fe66380a2d1ae1954e00e7c94117d8.jpg"></p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/2a849658f3c8276aed0ca8e24ecca2d.jpg"></p>
-<h3 id="up-sh的使用"><a href="#up-sh的使用" class="headerlink" title="up.sh的使用"></a>up.sh的使用</h3><p>您需要在存放install.sh脚本的目录中,右键打开git bash运行以下命令:</p>
-<pre class="line-numbers language-none"><code class="language-none">source install.sh deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>检查docker版本</p>
+<pre class="line-numbers language-none"><code class="language-none">docker --version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://3344701850-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LlpfTEtpw-XHjloYx-t%2F-LlurwQcZHGhMvMGz358%2F-LlutGTSONJsGgLT-HB3%2F8.png?alt=media&token=6b16f0f3-aaa4-4083-960c-e41031408d1a"></p>
-<p>你需要将up.sh复制到hexoblog文件,也就是复制到你的博客根目录下</p>
-<p><img src="https://3344701850-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LlpfTEtpw-XHjloYx-t%2F-LluvTLNmEKB-I1ZDiSA%2F-LluzdSM_MrB7O9qCs1Z%2F9.png?alt=media&token=bce8b33c-c6ec-4242-80fb-a0ac97e99d1a"></p>
-<p>然后在存放up.sh脚本的目录中,右键打开git bash运行以下命令:</p>
-<pre class="line-numbers language-none"><code class="language-none">source up.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203234317946.png"></p>
+<p>当然hyperledger fabric建议的版本为19.03.12，只要不小于这个版本基本都ok</p>
+<p>确保 Docker 守护程序正在运行。</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo systemctl start docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>之后即可自动部署到你的github或者coding上</p>
-<p>如果上传失败你需要检查是否安装的是最新版本的[hexo-script] ,或者在根目录配置了deploy信息.</p>
-<p>如果你不会配置,可以看下面的教程:</p>
-<h3 id="部署博客必要的配置"><a href="#部署博客必要的配置" class="headerlink" title="部署博客必要的配置"></a>部署博客必要的配置</h3><p>首先你需要打开根目录配置文件_config.yml</p>
-<p><img src="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/d942cf2c487c3fad259ac353a674aef.jpg"></p>
-<p>找到deploy,它一般在最后一行,按照以下的格式修改即可</p>
-<p><img src="https://3344701850-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LlpfTEtpw-XHjloYx-t%2F-LluvTLNmEKB-I1ZDiSA%2F-LluyCdpQ92nd8tuqn9Z%2F22.png?alt=media&token=05f14980-032b-4997-b2b2-9bb31c28332d"></p>
-<p>你只需要修改repo后面的信息即可</p>
-<pre class="line-numbers language-none"><code class="language-none">deploy:
-  type: git
-  repo: 这里填你的仓库地址,建议使用SSH地址,它是以git开头的
-  branch: master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可选：如果您希望 Docker 守护程序在系统启动时启动，请使用以下命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo systemctl enable docker<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>在1.3版本的[heox-script]后你无需自己安装上传插件,但如果报出了not found git的错误证明上传插件没有安装成功,你需要执行以下命令</p>
-<pre class="line-numbers language-none"><code class="language-none">cnpm install hexo-deployer-git --save
-或者是npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>将您的用户添加到 Docker 组。</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo usermod -a -G docker &lt;username&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>最后依次执行下列命令。</p>
-<pre class="line-numbers language-none"><code class="language-none">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy
-# 当然也可简写成
-hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
-# 这里，不一定每次都要 clean，clean 会清除缓存，导致一些计数脚本清零。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-4go语言"><a href="#1-4go语言" class="headerlink" title="1.4go语言"></a>1.4go语言</h3><p>下载最新的Go安装包：<a target="_blank" rel="noopener" href="https://go.dev/doc/install%E6%88%96%E7%9B%B4%E6%8E%A5%E8%BE%93%E5%85%A5%E5%A6%82%E4%B8%8B%E5%91%BD%E4%BB%A4%EF%BC%88hyperledger">https://go.dev/doc/install或直接输入如下命令（hyperledger</a> fabric建议的go语言版本为1.17.8）</p>
+<pre class="line-numbers language-none"><code class="language-none">wget https:&#x2F;&#x2F;studygolang.com&#x2F;dl&#x2F;golang&#x2F;go1.17.8.linux-amd64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>然后我们就可以在 <strong>本地PC</strong> 浏览器上输入 GitHub Pages 的域名 <code>https://自己的用户名.github.io</code> 访问我们的博客了。</p>
+<p>删除已安装的go，并解压go安装包。</p>
+<pre class="line-numbers language-none"><code class="language-none">rm -rf &#x2F;usr&#x2F;local&#x2F;go &amp;&amp; tar -C &#x2F;usr&#x2F;local -xzf go1.17.8.linux-amd64.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>配置环境变量。</p>
+<pre class="line-numbers language-none"><code class="language-none">export PATH&#x3D;$PATH:&#x2F;usr&#x2F;local&#x2F;go&#x2F;bin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>更换代理。</p>
+<pre class="line-numbers language-none"><code class="language-none">go env -w GOPROXY&#x3D;https:&#x2F;&#x2F;goproxy.io,direct
+go env -w GO111MODULE&#x3D;on<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>查看安装情况。</p>
+<pre class="line-numbers language-none"><code class="language-none">go version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203234651629.png"></p>
+<h3 id="1-5JQ"><a href="#1-5JQ" class="headerlink" title="1.5JQ"></a>1.5JQ</h3><p>⾃动安装JQ。</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo apt-get install jq<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="1-6Hyperledger-Fabric安装与配置"><a href="#1-6Hyperledger-Fabric安装与配置" class="headerlink" title="1.6Hyperledger Fabric安装与配置"></a>1.6<strong>Hyperledger Fabric</strong>安装与配置</h3><p>新建HLF⽬录。</p>
+<pre class="line-numbers language-none"><code class="language-none">mkdir hyperledger &#x2F;&#x2F;新建HLF⽬录
+cd hyperledger &#x2F;&#x2F;进⼊HLF⽬录<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>Github中拉取HLF最新安装脚本。</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo curl -sSLO
+https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;hyperledger&#x2F;fabric&#x2F;main&#x2F;scripts&#x2F;install-fabric.sh &amp;&amp;
+chmod +x install-fabric.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>安装HLF和HLF示例⽹络。</p>
+<pre class="line-numbers language-none"><code class="language-none">sudo .&#x2F;install-fabric.sh<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="2-Hyperledger-Fabric网络运行和测试"><a href="#2-Hyperledger-Fabric网络运行和测试" class="headerlink" title="2.Hyperledger Fabric网络运行和测试"></a>2.Hyperledger Fabric网络运行和测试</h2><h3 id="2-1搭建Fabric网络"><a href="#2-1搭建Fabric网络" class="headerlink" title="2.1搭建Fabric网络"></a>2.1搭建Fabric网络</h3><p>进⼊fabric⽹络测试实例⽬录。</p>
+<pre class="line-numbers language-none"><code class="language-none">cd fabric-samples&#x2F;test-network<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>开启fabric⽹络。这边建议先关闭一次fabric网络</p>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;network.sh down	&#x2F;&#x2F;关闭网络
+.&#x2F;network.sh up		&#x2F;&#x2F;开启网络<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>开启成功则出现如下结果：</p>
+<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203235154070.png"></p>
+<p>查看fabric⽹络状态。</p>
+<pre class="line-numbers language-none"><code class="language-none">docker ps -a<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/image-20221203235251293.png"></p>
+<p>创建fabric⽹络channel。</p>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;network.sh createChannel
+
+&#x2F;&#x2F;看到如下结果说明channel创建成功
+&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;Channel &#39;mychannel&#39; joined&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>创建channel的chaincode。只要不报错就是成功</p>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;network.sh deployCC -ccn basic -ccp ..&#x2F;asset-transfer-basic&#x2F;chaincode-go -ccl go<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="2-2Client-SDK与Fabric⽹络交互"><a href="#2-2Client-SDK与Fabric⽹络交互" class="headerlink" title="2.2Client SDK与Fabric⽹络交互"></a>2.2Client SDK与Fabric⽹络交互</h3><p>为client SDK添加环境变量。</p>
+<pre class="line-numbers language-none"><code class="language-none">export PATH&#x3D;$&#123;PWD&#125;&#x2F;..&#x2F;bin:$PATH
+export FABRIC_CFG_PATH&#x3D;$PWD&#x2F;..&#x2F;config&#x2F;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>将client SDK绑定在⼀个peer0.org1上。</p>
+<pre class="line-numbers language-none"><code class="language-none"># Environment variables for Org1
+export CORE_PEER_TLS_ENABLED&#x3D;true
+export CORE_PEER_LOCALMSPID&#x3D;&quot;Org1MSP&quot;
+export
+CORE_PEER_TLS_ROOTCERT_FILE&#x3D;$&#123;PWD&#125;&#x2F;organizations&#x2F;peerOrganizations&#x2F;org1.example.com&#x2F;pee
+rs&#x2F;peer0.org1.example.com&#x2F;tls&#x2F;ca.crt
+export
+CORE_PEER_MSPCONFIGPATH&#x3D;$&#123;PWD&#125;&#x2F;organizations&#x2F;peerOrganizations&#x2F;org1.example.com&#x2F;users&#x2F;A
+dmin@org1.example.com&#x2F;msp
+export CORE_PEER_ADDRESS&#x3D;localhost:7051<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在client SDK上执⾏chaincode的InitLedger⽅法。</p>
+<pre class="line-numbers language-none"><code class="language-none">peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
+orderer.example.com --tls --cafile
+$&#123;PWD&#125;&#x2F;organizations&#x2F;ordererOrganizations&#x2F;example.com&#x2F;orderers&#x2F;orderer.example.com&#x2F;msp&#x2F;
+tlscacerts&#x2F;tlsca.example.com-cert.pem -C mychannel -n basic --peerAddresses
+localhost:7051 --tlsRootCertFiles
+$&#123;PWD&#125;&#x2F;organizations&#x2F;peerOrganizations&#x2F;org1.example.com&#x2F;peers&#x2F;peer0.org1.example.com&#x2F;tl
+s&#x2F;ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles
+$&#123;PWD&#125;&#x2F;organizations&#x2F;peerOrganizations&#x2F;org2.example.com&#x2F;peers&#x2F;peer0.org2.example.com&#x2F;tl
+s&#x2F;ca.crt -c &#39;&#123;&quot;function&quot;:&quot;InitLedger&quot;,&quot;Args&quot;:[]&#125;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>成功执⾏则出现如下结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">-&gt; INFO 001 Chaincode invoke successful. result: status:200<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>在client SDK上执⾏chaincode的queryAll⽅法。</p>
+<pre class="line-numbers language-none"><code class="language-none">peer chaincode query -C mychannel -n basic -c &#39;&#123;&quot;Args&quot;:[&quot;GetAllAssets&quot;]&#125;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>成功执⾏则出现如下结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">]
+ &#123;&quot;ID&quot;: &quot;asset1&quot;, &quot;color&quot;: &quot;blue&quot;, &quot;size&quot;: 5, &quot;owner&quot;: &quot;Tomoko&quot;, &quot;appraisedValue&quot;:
+300&#125;,
+ &#123;&quot;ID&quot;: &quot;asset2&quot;, &quot;color&quot;: &quot;red&quot;, &quot;size&quot;: 5, &quot;owner&quot;: &quot;Brad&quot;, &quot;appraisedValue&quot;: 400&#125;,
+ &#123;&quot;ID&quot;: &quot;asset3&quot;, &quot;color&quot;: &quot;green&quot;, &quot;size&quot;: 10, &quot;owner&quot;: &quot;Jin Soo&quot;, &quot;appraisedValue&quot;:
+500&#125;,
+ &#123;&quot;ID&quot;: &quot;asset4&quot;, &quot;color&quot;: &quot;yellow&quot;, &quot;size&quot;: 10, &quot;owner&quot;: &quot;Max&quot;, &quot;appraisedValue&quot;:
+600&#125;,
+ &#123;&quot;ID&quot;: &quot;asset5&quot;, &quot;color&quot;: &quot;black&quot;, &quot;size&quot;: 15, &quot;owner&quot;: &quot;Adriana&quot;, &quot;appraisedValue&quot;:
+700&#125;,
+ &#123;&quot;ID&quot;: &quot;asset6&quot;, &quot;color&quot;: &quot;white&quot;, &quot;size&quot;: 15, &quot;owner&quot;: &quot;Michel&quot;, &quot;appraisedValue&quot;:
+800&#125;
+]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在client SDK上执⾏chaincode的transfer⽅法。</p>
+<pre class="line-numbers language-none"><code class="language-none">peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride
+orderer.example.com --tls --cafile
+$&#123;PWD&#125;&#x2F;organizations&#x2F;ordererOrganizations&#x2F;example.com&#x2F;orderers&#x2F;orderer.example.com&#x2F;msp&#x2F;
+tlscacerts&#x2F;tlsca.example.com-cert.pem -C mychannel -n basic --peerAddresses
+localhost:7051 --tlsRootCertFiles
+$&#123;PWD&#125;&#x2F;organizations&#x2F;peerOrganizations&#x2F;org1.example.com&#x2F;peers&#x2F;peer0.org1.example.com&#x2F;tl
+s&#x2F;ca.crt --peerAddresses localhost:9051 --tlsRootCertFiles
+$&#123;PWD&#125;&#x2F;organizations&#x2F;peerOrganizations&#x2F;org2.example.com&#x2F;peers&#x2F;peer0.org2.example.com&#x2F;tl
+s&#x2F;ca.crt -c &#39;&#123;&quot;function&quot;:&quot;TransferAsset&quot;,&quot;Args&quot;:[&quot;asset6&quot;,&quot;Christopher&quot;]&#125;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>成功执⾏则出现如下结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">2019-12-04 17:38:21.048 EST [chaincodeCmd] chaincodeInvokeOrQuery -&gt; INFO 001 Chaincode
+invoke successful. result: status:200<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>将client SDK绑定在⼀个peer0.org2上。</p>
+<pre class="line-numbers language-none"><code class="language-none"># Environment variables for Org2
+export CORE_PEER_TLS_ENABLED&#x3D;true
+export CORE_PEER_LOCALMSPID&#x3D;&quot;Org2MSP&quot;
+export
+CORE_PEER_TLS_ROOTCERT_FILE&#x3D;$&#123;PWD&#125;&#x2F;organizations&#x2F;peerOrganizations&#x2F;org2.example.com&#x2F;pee
+rs&#x2F;peer0.org2.example.com&#x2F;tls&#x2F;ca.crt
+export
+CORE_PEER_MSPCONFIGPATH&#x3D;$&#123;PWD&#125;&#x2F;organizations&#x2F;peerOrganizations&#x2F;org2.example.com&#x2F;users&#x2F;A
+dmin@org2.example.com&#x2F;msp
+export CORE_PEER_ADDRESS&#x3D;localhost:9051<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在client SDK上执⾏chaincode的query⽅法。</p>
+<pre class="line-numbers language-none"><code class="language-none">peer chaincode query -C mychannel -n basic -c &#39;&#123;&quot;Args&quot;:[&quot;ReadAsset&quot;,&quot;asset6&quot;]&#125;&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>成功执⾏则出现如下结果：</p>
+<pre class="line-numbers language-none"><code class="language-none">&#123;&quot;ID&quot;:&quot;asset6&quot;,&quot;color&quot;:&quot;white&quot;,&quot;size&quot;:15,&quot;owner&quot;:&quot;Christopher&quot;,&quot;appraisedValue&quot;:800&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>只要上述操作不报错便可证明你已经成功搭建了Hyperledger Fabric网络了！！！！！</p>
+<h3 id="2-3关闭网络"><a href="#2-3关闭网络" class="headerlink" title="2.3关闭网络"></a>2.3关闭网络</h3><p>关闭测试的实例Fabric⽹络。</p>
+<pre class="line-numbers language-none"><code class="language-none">.&#x2F;network.sh down<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
                 
             </div>
@@ -522,7 +616,7 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://junwuqing.github.io/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/">http://junwuqing.github.io/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/</a>
+                    <a href="http://junwuqing.github.io/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/">http://junwuqing.github.io/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -559,11 +653,7 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E9%83%A8%E7%BD%B2%E7%B1%BB/">
-                                    <span class="chip bg-color">部署类</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -640,9 +730,10 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/">
                     <div class="card-image">
@@ -660,9 +751,9 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -671,6 +762,7 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -681,13 +773,13 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/10/25/hexo-zhu-ti-mei-hua-yu-fa-bu-wen-zhang/">
+                <a href="/2022/10/26/jiang-hexo-bu-shu-dao-github-shang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.webp" class="responsive-img" alt="hexo主题美化与发布文章">
+                        <img src="/medias/featureimages/19.webp" class="responsive-img" alt="将hexo部署到github上">
                         
-                        <span class="card-title">hexo主题美化与发布文章</span>
+                        <span class="card-title">将hexo部署到github上</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -698,7 +790,7 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-26
                             </span>
                         <span class="publish-author">
                             
@@ -711,8 +803,8 @@ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BC%98%E5%8C%96%E7%B1%BB/">
-                        <span class="chip bg-color">优化类</span>
+                    <a href="/tags/%E9%83%A8%E7%BD%B2%E7%B1%BB/">
+                        <span class="chip bg-color">部署类</span>
                     </a>
                     
                 </div>
