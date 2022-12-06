@@ -1,0 +1,1504 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="官方文档教程案例分析03-运行外部链码生成器, somewei">
+    <meta name="description" content="官方文档教程03-运行外部链码生成器Fabric v2.4.1 外部链代码构建器提供了一种实用的方法来运行智能合约，使peer能够运行外部（对自身）命令来管理链码。 相比之下，早期将智能合约部署到channel方法需要peer节点来编排链代">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>官方文档教程案例分析03-运行外部链码生成器 | somewei</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+
+
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+    
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">somewei</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">somewei</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.webp')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">官方文档教程案例分析03-运行外部链码生成器</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B%E7%B1%BB/">
+                                <span class="chip bg-color">教程类</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-12-05
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.1k
+                </div>
+                
+
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="官方文档教程03-运行外部链码生成器"><a href="#官方文档教程03-运行外部链码生成器" class="headerlink" title="官方文档教程03-运行外部链码生成器"></a>官方文档教程03-运行外部链码生成器</h1><p>Fabric v2.4.1 外部链代码构建器提供了一种实用的方法来运行智能合约，使peer能够运行外部（对自身）命令来管理链码。 相比之下，早期将智能合约部署到channel方法需要peer节点来编排链代码的完整生命周期。 这要求peer有权访问 Docker 守护进程以创建映像并启动容器。 Java、Node.js 和 Go 链码框架对同行来说是明确已知的，包括它们应该如何构建和启动。</p>
+<p>因此，传统的链码部署方法很难将链码部署到 Kubernetes (K8s) 或其他对 Docker 守护进程的访问受到限制的环境中，并且很难以任何形式的调试模式运行链码。 此外，代码通常由peer重新构建，需要外部互联网连接并引入一些关于已安装依赖项的不确定性。</p>
+<p>链码即服务方法确实需要管理员协调链码构建和部署阶段。 尽管这增加了一个步骤，但它为管理员提供了对该过程的控制。 peer仍然需要安装“链码包”，但没有代码——只安装有关链码托管位置的信息（例如主机名、端口和 TLS 配置）。</p>
+<h2 id="1-Fabric-v2-4-1-改进"><a href="#1-Fabric-v2-4-1-改进" class="headerlink" title="1.Fabric v2.4.1 改进"></a>1.Fabric v2.4.1 改进</h2><p>测试网络使用最新的 Fabric 版本 （v2.4.1），这有助于使用链码‘-as-a-service’：</p>
+<ul>
+<li>peer节点的 Docker 映像包含一个名为“ccaasbuilder”的链码‘-as-a-service’的预配置构建器。这消除了构建自己的外部构建器并重新打包和配置peer的先前要求。</li>
+<li>ccaasbuilder 应用程序包含在二进制 tgz 存档下载中，以供在其他情况下使用。 sampleconfig/core.yaml 更新为引用“ccaasbuilder”。</li>
+<li>Fabric v2.4.1 Java 链码消除了编写自定义引导主类的要求（在 Node.js 链码中实现并计划用于 go 链码）。</li>
+</ul>
+<p><strong>注意：</strong>此核心功能在早期版本中也可用，但需要编写外部链码代码生成器二进制文件并正确配置 core.yaml。</p>
+<h2 id="2-通过测试网络实现端到端"><a href="#2-通过测试网络实现端到端" class="headerlink" title="2.通过测试网络实现端到端"></a>2.通过测试网络实现端到端</h2><p>test-network和一些链码已经更新，以支持链码‘-as-a-service’的运行。下面的命令需要最新的fabric-samples以及最新的fabric docker映像。</p>
+<p>首先打开两个终端窗口，一个用于启动Fabric测试网络，另一个用于监视Docker容器。在”monitoring”窗口中，运行以下bash脚本来监视fabric_test网络上Docker容器的活动；这将监视添加到fabric-test网络的所有Docker容器。</p>
+<p>test-network通常是通过运行./network.sh up命令来创建的，因此请延迟运行bash脚本，直到创建网络。（注意，可以使用docker network create fabric-test提前创建网络。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># from the fabric-samples repo</span>
+./test-network/monitordocker.sh<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>在”Fabric Network”窗口中，启动测试网络:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> test-network
+./network.sh up createChannel<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>下一个命令的变体，例如使用 CouchDB 或 CA，可以在不影响链码‘-as-a-service’功能的情况下使用。三个关键步骤如下，顺序不分：</p>
+<ul>
+<li>生成链码包的Docker映像，其中包含用于确定链码容器（托管一个或多个合同）运行位置的信息。资产转移-basic/chaincode-typescript和资产转移-basic/chaincode-java都用Docker文件进行了更新。</li>
+<li>安装、批准和提交链码定义；无论是否使用外部链码生成器，都将运行这些命令。链码包只包含连接信息（主机名、端口、TLS证书），没有代码。</li>
+<li>启动包含合同的Docker容器。</li>
+</ul>
+<p>容器必须在peer提交第一个事务之前运行。如果设置了initRequired标志，这可能发生在提交时。</p>
+<p>该序列可以按如下方式运行:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./network.sh deployCCAAS  <span class="token parameter variable">-ccn</span> basicts <span class="token parameter variable">-ccp</span> <span class="token punctuation">..</span>/asset-transfer-basic/chaincode-typescript<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这与deployCC命令类似，因为它指定了名称和路径。因为每个容器都在fabric-test网络上，更改端口可以避免与其他链码容器发送冲突。如果运行多个服务，则需要更改端口。</p>
+<p>如果成功到这一点，智能合约（链码）应该在监控窗口中启动。应该有两个容器在运行，一个用于org1，一个用于org2。容器名称包含组织名称、peer名称和链码名称。</p>
+<p>作为测试，运行“合同原数据”功能，如下所示。（有关作为不同组织进行测试的详细信息，请参阅<a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/en/latest/test_network.html#interacting-with-the-network">与网络交互</a>）。</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># Environment variables for Org1</span>
+<span class="token comment"># Org1的环境变量</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CORE_PEER_TLS_ENABLED</span><span class="token operator">=</span>true
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CORE_PEER_LOCALMSPID</span><span class="token operator">=</span><span class="token string">"Org1MSP"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CORE_PEER_TLS_ROOTCERT_FILE</span><span class="token operator">=</span><span class="token variable">$&#123;<span class="token environment constant">PWD</span>&#125;</span>/organizations/peerOrganizations/org1.example.com/tlsca/tlsca.org1.example.com-cert.pem
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CORE_PEER_MSPCONFIGPATH</span><span class="token operator">=</span><span class="token variable">$&#123;<span class="token environment constant">PWD</span>&#125;</span>/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">CORE_PEER_ADDRESS</span><span class="token operator">=</span>localhost:7051
+<span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token variable">$&#123;<span class="token environment constant">PWD</span>&#125;</span>/<span class="token punctuation">..</span>/bin:<span class="token environment constant">$PATH</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">FABRIC_CFG_PATH</span><span class="token operator">=</span><span class="token variable">$&#123;<span class="token environment constant">PWD</span>&#125;</span>/<span class="token punctuation">..</span>/config
+
+<span class="token comment"># invoke the function</span>
+<span class="token comment"># 调用函数</span>
+peer chaincode query <span class="token parameter variable">-C</span> mychannel <span class="token parameter variable">-n</span> basicts <span class="token parameter variable">-c</span> <span class="token string">'&#123;"Args":["org.hyperledger.fabric:GetMetadata"]&#125;'</span> <span class="token operator">|</span> jq<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"$schema"</span><span class="token operator">:</span> <span class="token string">"https://hyperledger.github.io/fabric-chaincode-node/main/api/contract-schema.json"</span><span class="token punctuation">,</span>
+  <span class="token property">"contracts"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"AssetTransferContract"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"AssetTransferContract"</span><span class="token punctuation">,</span>
+      <span class="token property">"contractInstance"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"AssetTransferContract"</span><span class="token punctuation">,</span>
+        <span class="token property">"default"</span><span class="token operator">:</span> <span class="token boolean">true</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token property">"transactions"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"SUBMIT"</span><span class="token punctuation">,</span>
+            <span class="token string">"submitTx"</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"parameters"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"InitLedger"</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"SUBMIT"</span><span class="token punctuation">,</span>
+            <span class="token string">"submitTx"</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"parameters"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"id"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"color"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"size"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"number"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"owner"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"appraisedValue"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"number"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"CreateAsset"</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"EVALUATE"</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"parameters"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"id"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"ReadAsset"</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"SUBMIT"</span><span class="token punctuation">,</span>
+            <span class="token string">"submitTx"</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"parameters"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"id"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"color"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"size"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"number"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"owner"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"appraisedValue"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"number"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"UpdateAsset"</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"SUBMIT"</span><span class="token punctuation">,</span>
+            <span class="token string">"submitTx"</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"parameters"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"id"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"DeleteAsset"</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token property">"returns"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"boolean"</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+          <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"AssetExists"</span><span class="token punctuation">,</span>
+          <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"EVALUATE"</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"parameters"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"id"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"SUBMIT"</span><span class="token punctuation">,</span>
+            <span class="token string">"submitTx"</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"parameters"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"id"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#123;</span>
+              <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"newOwner"</span><span class="token punctuation">,</span>
+              <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+              <span class="token property">"schema"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+                <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+              <span class="token punctuation">&#125;</span>
+            <span class="token punctuation">&#125;</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"TransferAsset"</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token property">"returns"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"string"</span>
+          <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+          <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"GetAllAssets"</span><span class="token punctuation">,</span>
+          <span class="token property">"tag"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"EVALUATE"</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+          <span class="token property">"parameters"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"info"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"AssetTransfer"</span><span class="token punctuation">,</span>
+        <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Smart contract for trading assets"</span><span class="token punctuation">,</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"AssetTransferContract"</span><span class="token punctuation">,</span>
+        <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">""</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token property">"org.hyperledger.fabric"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"org.hyperledger.fabric"</span><span class="token punctuation">,</span>
+      <span class="token property">"contractInstance"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"org.hyperledger.fabric"</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      <span class="token property">"transactions"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">&#123;</span>
+          <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"GetMetadata"</span>
+        <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">"info"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">""</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"info"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"asset-transfer-basic"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token property">"components"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"schemas"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意，如果没有安装jq，可以省略|jq。但是，原数据在JSON中显示了部署契约的详细信息，因此jq提供了易读性。要确认智能合约正在工作，请重复org2前面的命令。</p>
+<p>要运行Java示例，请按如下方式更改deployCCAAS命令，该命令将创建两个新容器:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./network.sh deployCCAAS  <span class="token parameter variable">-ccn</span> basicj <span class="token parameter variable">-ccp</span> <span class="token punctuation">..</span>/asset-transfer-basic/chaincode-java<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="3-可能存在的错误"><a href="#3-可能存在的错误" class="headerlink" title="3.可能存在的错误"></a>3.可能存在的错误</h2><p>如果传递的JSON结构格式不正确，对等日志将包含以下错误:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">::Error: Failed to unmarshal json: cannot unmarshal string into Go value of <span class="token builtin class-name">type</span> map<span class="token punctuation">[</span>string<span class="token punctuation">]</span>interface <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span> <span class="token assign-left variable">command</span><span class="token operator">=</span>build<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="4-如何配置每种语言"><a href="#4-如何配置每种语言" class="headerlink" title="4.如何配置每种语言"></a>4.如何配置每种语言</h2><p>每种语言都可以在“即服务”模式下运行。以下方法基于出版时的最新库。启动映像时，可以指定相应链码库的任何TLS选项或其他日志记录选项。</p>
+<h3 id="4-1Java"><a href="#4-1Java" class="headerlink" title="4.1Java"></a>4.1Java</h3><p>使用Fabric v2.4.1Java链码库，没有代码更改或构建更改来实现。如果设置了环境变量CHAINCODE_SERVER_ADDRESS，则将使用“-as-a-service”模式。</p>
+<p>下面的示例Docker run命令显示了两个必需的变量，CHAINCODE_SERVER_ADDRESS和CORE_CHAICODE_ID_NAME:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">--rm</span> <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> peer0org1_assettx_ccaas  <span class="token punctuation">\</span>
+              <span class="token parameter variable">--network</span> fabric_test <span class="token punctuation">\</span>
+              <span class="token parameter variable">-e</span> <span class="token assign-left variable">CHAINCODE_SERVER_ADDRESS</span><span class="token operator">=</span><span class="token number">0.0</span>.0.0:9999 <span class="token punctuation">\</span>
+              <span class="token parameter variable">-e</span> <span class="token assign-left variable">CORE_CHAINCODE_ID_NAME</span><span class="token operator">=</span><span class="token operator">&lt;</span>use package <span class="token function">id</span> here<span class="token operator">></span> <span class="token punctuation">\</span>
+               assettx_ccaas_image:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4-2Node-js"><a href="#4-2Node-js" class="headerlink" title="4.2Node.js"></a>4.2Node.js</h3><p>对于Node.js（JavaScript或TypeScript）链码，package.json通常使用fabric-chaincode-node start作为主启动命令。要以“-as-a-service”模式运行，请将此启动命令更改为fabric-chaincode-node服务器–链码地址=$CHAINCODE_SERVER_ADDRESS-链码ID=$CHAINCODE_ID</p>
+<h2 id="5-调试链码"><a href="#5-调试链码" class="headerlink" title="5.调试链码"></a>5.调试链码</h2><p>运行在‘-as-a-service’模式提供选项，类似于用于调试代码的Fabric“dev”模式。dev模式的限制不适用于‘-as-a-service’。</p>
+<p>deployCCAAS命令可以提供-cca as docker false选项来不生成Docker映像或启动Docker容器。该选项输出将要运行的命令。</p>
+<p>命令输出类似于以下示例：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./network.sh deployCCAAS  <span class="token parameter variable">-ccn</span> basicj <span class="token parameter variable">-ccp</span> <span class="token punctuation">..</span>/asset-transfer-basic/chaincode-java <span class="token parameter variable">-ccaasdocker</span> <span class="token boolean">false</span>
+<span class="token comment">#....</span>
+Not building <span class="token function">docker</span> image<span class="token punctuation">;</span> this the <span class="token builtin class-name">command</span> we would have run
+<span class="token function">docker</span> build <span class="token parameter variable">-f</span> <span class="token punctuation">..</span>/asset-transfer-basic/chaincode-java/Dockerfile <span class="token parameter variable">-t</span> basicj_ccaas_image:latest --build-arg <span class="token assign-left variable">CC_SERVER_PORT</span><span class="token operator">=</span><span class="token number">9999</span> <span class="token punctuation">..</span>/asset-transfer-basic/chaincode-java
+<span class="token comment">#....</span>
+Not starting <span class="token function">docker</span> containers<span class="token punctuation">;</span> these are the commands we would have run
+    <span class="token function">docker</span> run <span class="token parameter variable">--rm</span> <span class="token parameter variable">-d</span> <span class="token parameter variable">--name</span> peer0org1_basicj_ccaas                    <span class="token parameter variable">--network</span> fabric_test                   <span class="token parameter variable">-e</span> <span class="token assign-left variable">CHAINCODE_SERVER_ADDRESS</span><span class="token operator">=</span><span class="token number">0.0</span>.0.0:9999                   <span class="token parameter variable">-e</span> <span class="token assign-left variable">CHAINCODE_ID</span><span class="token operator">=</span>basicj_1.0:59dcd73a14e2db8eab7f7683343ce27ac242b93b4e8075605a460d63a0438405 <span class="token parameter variable">-e</span> <span class="token assign-left variable">CORE_CHAINCODE_ID_NAME</span><span class="token operator">=</span>basicj_1.0:59dcd73a14e2db8eab7f7683343ce27ac242b93b4e8075605a460d63a0438405                     basicj_ccaas_image:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意：根据目录位置或调试要求，前面的命令可能需要调整。</p>
+<h2 id="6-构建-Docker-镜像"><a href="#6-构建-Docker-镜像" class="headerlink" title="6.构建 Docker 镜像"></a>6.构建 Docker 镜像</h2><p>调试链码的第一个要求是构建Docker映像。只要peer能够连接到connection.json中指定的hostname:port，链码的实际打包对peer就不重要了。可以重新定位下面指定的Docker文件。</p>
+<p>手动构建用于资产转移的Docker映像-basic/chaincode-java：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> build <span class="token parameter variable">-f</span> <span class="token punctuation">..</span>/asset-transfer-basic/chaincode-java/Dockerfile <span class="token parameter variable">-t</span> basicj_ccaas_image:latest --build-arg <span class="token assign-left variable">CC_SERVER_PORT</span><span class="token operator">=</span><span class="token number">9999</span> <span class="token punctuation">..</span>/asset-transfer-basic/chaincode-java<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="7-启动-Docker-容器"><a href="#7-启动-Docker-容器" class="headerlink" title="7.启动 Docker 容器"></a>7.启动 Docker 容器</h2><p>下来，必须启动 Docker 容器。例如，在 Node.js 中，容器可以按如下方式启动：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">docker</span> run <span class="token parameter variable">--rm</span> <span class="token parameter variable">-it</span> <span class="token parameter variable">-p</span> <span class="token number">9229</span>:9229 <span class="token parameter variable">--name</span> peer0org2_basic_ccaas <span class="token parameter variable">--network</span> fabric_test <span class="token parameter variable">-e</span> <span class="token assign-left variable">DEBUG</span><span class="token operator">=</span>true <span class="token parameter variable">-e</span> <span class="token assign-left variable">CHAINCODE_SERVER_ADDRESS</span><span class="token operator">=</span><span class="token number">0.0</span>.0.0:9999 <span class="token parameter variable">-e</span> <span class="token assign-left variable">CHAINCODE_ID</span><span class="token operator">=</span>basic_1.0:7c7dff5cdc43c77ccea028c422b3348c3c1fb5a26ace0077cf3cc627bd355ef0 <span class="token parameter variable">-e</span> <span class="token assign-left variable">CORE_CHAINCODE_ID_NAME</span><span class="token operator">=</span>basic_1.0:7c7dff5cdc43c77ccea028c422b3348c3c1fb5a26ace0077cf3cc627bd355ef0 basic_ccaas_image:latest<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>例如，在Java中，Docker容器可以按如下方式启动：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"> <span class="token function">docker</span> run <span class="token parameter variable">--rm</span> <span class="token parameter variable">-it</span> <span class="token parameter variable">--name</span> peer0org1_basicj_ccaas <span class="token parameter variable">-p</span> <span class="token number">8000</span>:8000 <span class="token parameter variable">--network</span> fabric_test <span class="token parameter variable">-e</span> <span class="token assign-left variable">DEBUG</span><span class="token operator">=</span>true <span class="token parameter variable">-e</span> <span class="token assign-left variable">CHAINCODE_SERVER_ADDRESS</span><span class="token operator">=</span><span class="token number">0.0</span>.0.0:9999 <span class="token parameter variable">-e</span> <span class="token assign-left variable">CHAINCODE_ID</span><span class="token operator">=</span>basicj_1.0:b014a03d8eb1898535e25b4dfeeb3f8244c9f07d91a06aec03e2d19174c45e4f <span class="token parameter variable">-e</span> <span class="token assign-left variable">CORE_CHAINCODE_ID_NAME</span><span class="token operator">=</span>basicj_1.0:b014a03d8e
+b1898535e25b4dfeeb3f8244c9f07d91a06aec03e2d19174c45e4f  basicj_ccaas_image:latest<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="8-调试先决条件"><a href="#8-调试先决条件" class="headerlink" title="8.调试先决条件"></a>8.调试先决条件</h2><p>以下先决条件适用于调试所有语言:</p>
+<ul>
+<li>容器名称必须与peer的connection.json中的名称匹配。</li>
+<li>peer节点通过Docker网络连接到链码容器。因此，端口9999不需要转发到主机。</li>
+<li>调试器中的单个单步执行可能会触发默认的Fabric事务超时值30秒。通过将CORE_CHAINCODE_EXECUTETIMEOUT=300s添加到test-network/docker/docker-composer-test-net.yml文件中每个peer的环境选项中，将链码完成事务的时间增加到300秒。</li>
+<li>在上一节中的docker run命令中，test-network -d默认选项已被-it取代。此更改在前台运行Docker容器，而不是在分离模式下运行Docker容器。</li>
+</ul>
+<p>以下先决条件适用于调试Node.js:</p>
+<ul>
+<li>端口9229被转发。但是，这是Node.js使用的调试端口。</li>
+<li>-e DEBUG=true将触发节点运行时以调试模式启动。这是在docker/docker-entrypoint.sh脚本中编码的，出于安全考虑，应该考虑从生产映像中删除该脚本。</li>
+<li>如果您使用的是TypeScript，请确保TypeScript已使用sourcemaps编译；否则，调试器将难以匹配源代码。</li>
+</ul>
+<p>以下先决条件适用于调试 Java：</p>
+<ul>
+<li>端口8000被转发，这是JVM的调试端口。</li>
+<li>-e DEBUG=true将触发节点运行时以调试模式启动。这是一个在docker/docker-entrypoint.sh脚本中编码的示例，出于安全考虑，应该考虑将其从生产映像中删除。</li>
+<li>启动调试器的java命令选项是java-agent lib:jdwp=传输=dt_socket，服务器=y，挂起=n，地址=0.0.0.0:8000 -jar/链码.jar。注意0.0.0.0，作为调试端口，必须绑定到所有的网络适配器因此可以从容器外部连接调试器。</li>
+</ul>
+<h2 id="9-与多个peer一起运行"><a href="#9-与多个peer一起运行" class="headerlink" title="9.与多个peer一起运行"></a>9.与多个peer一起运行</h2><p>在前面的方法中，链码被批准的每个peer都有一个运行链码的容器。‘-as-a-service’方法需要实现相同的体系结构。</p>
+<p>json包含正在运行的链码容器的地址，因此可以对其进行更新，以确保每个peer连接到不同的容器。但是，与链码包中的connection.json一样，Fabric要求包ID在组织中的所有peer之间保持一致。为了实现这一点，外部构建器支持模板功能。此模板的上下文取自每个peer上设置的环境变量CHAINCODE_AS_A_SERVICE_BUILDER_CONFIG。</p>
+<p>将地址定义为connection.json中的模板，如下所示：</p>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+  <span class="token property">"address"</span><span class="token operator">:</span> <span class="token string">"&#123;&#123;.peername&#125;&#125;_assettransfer_ccaas:9999"</span><span class="token punctuation">,</span>
+  <span class="token property">"dial_timeout"</span><span class="token operator">:</span> <span class="token string">"10s"</span><span class="token punctuation">,</span>
+  <span class="token property">"tls_required"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在peer的环境配置中，为org1的peer1设置以下变量:</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">CHAINCODE_AS_A_SERVICE_BUILDER_CONFIG</span><span class="token operator">=</span><span class="token string">"&#123;<span class="token entity" title="\&quot;">\"</span>peername<span class="token entity" title="\&quot;">\"</span>:<span class="token entity" title="\&quot;">\"</span>org1peer1<span class="token entity" title="\&quot;">\"</span>&#125;"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>外部构建器然后将此地址解析为org1peer1_assettransfer_ccaas:9999，供peer使用。</p>
+<p>每个peer都可以有自己独立的配置，因此有一个唯一的地址。设置的JSON字符串可以具有任何结构，只要模板（在golang模板语法中）匹配。</p>
+<p>connection.json中的任何值都可以模板化，但只能模板化值，不能模板化键。</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">普信摩羯妈宝凤凰下头搞笑男</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://junwuqing.github.io/2022/12/05/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-03-yun-xing-wai-bu-lian-ma-sheng-cheng-qi/">http://junwuqing.github.io/2022/12/05/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-03-yun-xing-wai-bu-lian-ma-sheng-cheng-qi/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">普信摩羯妈宝凤凰下头搞笑男</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%99%E7%A8%8B%E7%B1%BB/">
+                                    <span class="chip bg-color">教程类</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/12/05/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-04-zai-fabric-zhong-shi-yong-si-you-shu-ju/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.webp" class="responsive-img" alt="官方文档教程案例分析04-在Fabric中使用私有数据">
+                        
+                        <span class="card-title">官方文档教程案例分析04-在Fabric中使用私有数据</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-05
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            普信摩羯妈宝凤凰下头搞笑男
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B%E7%B1%BB/">
+                        <span class="chip bg-color">教程类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/12/04/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-02-yun-xing-fabric-ying-yong-cheng-xu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.webp" class="responsive-img" alt="官方文档教程案例分析02-运行Fabric应用程序">
+                        
+                        <span class="card-title">官方文档教程案例分析02-运行Fabric应用程序</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            普信摩羯妈宝凤凰下头搞笑男
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B%E7%B1%BB/">
+                        <span class="chip bg-color">教程类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: somewei<br />'
+            + '文章作者: 普信摩羯妈宝凤凰下头搞笑男<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">普信摩羯妈宝凤凰下头搞笑男</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">38.6k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/junwuqing" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1275017708@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1275017708" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1275017708" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    
+        <script type="text/javascript">
+        //只在桌面版网页启用特效
+        var windowWidth = $(window).width();
+        if (windowWidth > 768) {
+            document.write('<script type="text/javascript" src="/js/sakura.js" />');
+        }
+        </script>
+    
+   
+        
+
+</body>
+
+</html>
