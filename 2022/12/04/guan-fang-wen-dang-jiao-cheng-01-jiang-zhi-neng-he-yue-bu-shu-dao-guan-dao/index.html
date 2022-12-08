@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="官方文档教程案例分析01-将智能合约部署到管道, somewei">
+    <meta name="keywords" content="官方文档教程01-将智能合约部署到管道, somewei">
     <meta name="description" content="官方文档教程01-将智能合约部署到通道最终用户通过调用智能合约与区块链分类账进行交互。在Hyperledger Fabric中，智能合约（smart contract）部署在称为链码（chaincode）的包中。想要验证交易和查询账本的组织">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>官方文档教程案例分析01-将智能合约部署到管道 | somewei</title>
+    <title>官方文档教程01-将智能合约部署到管道 | somewei</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -336,12 +336,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.webp')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.webp')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">官方文档教程案例分析01-将智能合约部署到管道</h1>
+                    <h1 class="description center-align post-title">官方文档教程01-将智能合约部署到管道</h1>
                 </div>
             </div>
         </div>
@@ -363,9 +363,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B%E7%B1%BB/">
+                                <span class="chip bg-color">教程类</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -424,7 +428,7 @@
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">./network.sh up createChannel<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>createChannel命令将会创建一个名为两个channel成员（Org1 和 Org2）的channel（mychannell）。该命令还会将属于每个组织的peer加入channel。如果网络和channel创建成功，您可以在日志中看到打印的以下消息：</p>
-<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204140532209.png"></p>
+<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204140532209.png"></p>
 <p>现在，我们可以使用 Peer CLI 通过以下步骤将资产转移（basic）链码部署到通道：</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/en/latest/deploy_chaincode.html#package-the-smart-contract">第一步：打包智能合约</a></li>
@@ -496,7 +500,7 @@ require <span class="token punctuation">(</span>
 <p>运行命令查看是否存在vendor文件夹</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204141937534.png"></p>
+<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204141937534.png"></p>
 <p>现在我们有了依赖项，我们可以创建链码包了。导航回文件夹中的工作目录（test-network），以便我们可以将链码与其他网络工件打包在一起。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>/<span class="token punctuation">..</span>/test-network<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -509,7 +513,7 @@ require <span class="token punctuation">(</span>
 <p>要确认您能够使用peerCLI，请检查二进制文件的版本。二进制文件必须是2.0.0或更高版本才能运行本教程。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">peer version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204142137684.png"></p>
+<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204142137684.png"></p>
 <p>您现在可以使用 <strong>peer lifecycle chaincode package</strong>命令创建<a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/en/latest/commands/peerlifecycle.html#peer-lifecycle-chaincode-package">链码包</a>：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">peer lifecycle chaincode package basic.tar.gz <span class="token parameter variable">--path</span> <span class="token punctuation">..</span>/asset-transfer-basic/chaincode-go/ <span class="token parameter variable">--lang</span> golang <span class="token parameter variable">--label</span> basic_1.0<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -524,7 +528,7 @@ require <span class="token punctuation">(</span>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ls</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>看到如下包即创建成功！</p>
-<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204142220118.png"></p>
+<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204142220118.png"></p>
 <p>现在我们创建了链码包，我们可以在测试网络的peer节点上<a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/en/latest/deploy_chaincode.html#install-the-chaincode-package">安装链码</a>。</p>
 <h3 id="2-2JavaScript"><a href="#2-2JavaScript" class="headerlink" title="2.2JavaScript"></a>2.2JavaScript</h3><p>在打包链码之前，我们需要安装链码依赖项。导航到包含资产转移（basic）链码的 JavaScript 版本的文件夹。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">cd</span> fabric-samples/asset-transfer-basic/chaincode-javascript<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -664,7 +668,7 @@ require <span class="token punctuation">(</span>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">peer lifecycle chaincode <span class="token function">install</span> basic.tar.gz<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>如果命令成功，对等方将生成并返回包标识符。此包 ID 将用于在下一步中批准链码。应会看到类似于以下内容的输出：</p>
-<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204170443994.png"></p>
+<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204170443994.png"></p>
 <p>我们现在可以在 Org2 peer上安装链码。将以下环境变量设置为以 Org2 管理员身份运行，并以 Org2 peer为目标。<code>peer0.org2.example.com</code></p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">//peer0.org2Id
 <span class="token builtin class-name">export</span> <span class="token assign-left variable">CORE_PEER_LOCALMSPID</span><span class="token operator">=</span><span class="token string">"Org2MSP"</span>
@@ -824,7 +828,7 @@ Package ID: basic_2.0:cbb6c1822047f9b1ba24b07458c0f19145fa5da1ba3bcba1fe77fc6d68
 
 <p>成功的提交交易将立即启动新的链码。如果链码定义改变了背书策略，新策略将生效。</p>
 <p>您可以使用docker ps命令来验证新链码是否已在您的peer节点上启动：</p>
-<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204191053032.png"></p>
+<p><img src="/2022/12/04/guan-fang-wen-dang-jiao-cheng-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/image-20221204191053032.png"></p>
 <p>如果您使用了 –init-required标志，则需要调用 Init 函数，然后才能使用升级后的链码。因为我们没有请求执行 Init，所以我们可以通过创建一个新车来测试我们新的 JavaScript 链码：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">peer chaincode invoke <span class="token parameter variable">-o</span> localhost:7050 <span class="token parameter variable">--ordererTLSHostnameOverride</span> orderer.example.com <span class="token parameter variable">--tls</span> <span class="token parameter variable">--cafile</span> <span class="token string">"<span class="token variable">$&#123;<span class="token environment constant">PWD</span>&#125;</span>/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem"</span> <span class="token parameter variable">-C</span> mychannel <span class="token parameter variable">-n</span> basic <span class="token parameter variable">--peerAddresses</span> localhost:7051 <span class="token parameter variable">--tlsRootCertFiles</span> <span class="token string">"<span class="token variable">$&#123;<span class="token environment constant">PWD</span>&#125;</span>/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"</span> <span class="token parameter variable">--peerAddresses</span> localhost:9051 <span class="token parameter variable">--tlsRootCertFiles</span> <span class="token string">"<span class="token variable">$&#123;<span class="token environment constant">PWD</span>&#125;</span>/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt"</span> <span class="token parameter variable">-c</span> <span class="token string">'&#123;"function":"CreateAsset","Args":["asset8","blue","16","Kelley","750"]&#125;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -934,7 +938,7 @@ Endorsement<span class="token operator">:</span>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://junwuqing.github.io/2022/12/04/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/">http://junwuqing.github.io/2022/12/04/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/</a>
+                    <a href="http://junwuqing.github.io/2022/12/04/guan-fang-wen-dang-jiao-cheng-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/">http://junwuqing.github.io/2022/12/04/guan-fang-wen-dang-jiao-cheng-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -971,7 +975,11 @@ Endorsement<span class="token operator">:</span>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E6%95%99%E7%A8%8B%E7%B1%BB/">
+                                    <span class="chip bg-color">教程类</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1052,13 +1060,13 @@ Endorsement<span class="token operator">:</span>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/12/04/guan-fang-wen-dang-jiao-cheng-02-yun-xing-fabric-ying-yong-cheng-xu/">
+                <a href="/2022/12/04/guan-fang-wen-dang-jiao-cheng-an-li-fen-xi-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.webp" class="responsive-img" alt="官方文档教程02-运行Fabric应用程序">
+                        <img src="/medias/featureimages/15.webp" class="responsive-img" alt="官方文档教程案例分析01-将智能合约部署到管道">
                         
-                        <span class="card-title">官方文档教程02-运行Fabric应用程序</span>
+                        <span class="card-title">官方文档教程案例分析01-将智能合约部署到管道</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1080,14 +1088,6 @@ Endorsement<span class="token operator">:</span>
                     </div>
                 </div>
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%99%E7%A8%8B%E7%B1%BB/">
-                        <span class="chip bg-color">教程类</span>
-                    </a>
-                    
-                </div>
-                
             </div>
         </div>
         
@@ -1097,13 +1097,13 @@ Endorsement<span class="token operator">:</span>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/12/04/guan-fang-wen-dang-jiao-cheng-01-jiang-zhi-neng-he-yue-bu-shu-dao-guan-dao/">
+                <a href="/2022/12/03/ji-yu-teng-xun-yun-ubuntu18-04-ban-ben-da-jian-hyperledger-fabric/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.webp" class="responsive-img" alt="官方文档教程01-将智能合约部署到管道">
+                        <img src="/medias/featureimages/23.webp" class="responsive-img" alt="基于腾讯云ubuntu18.04版本搭建Hyperledger Fabric">
                         
-                        <span class="card-title">官方文档教程01-将智能合约部署到管道</span>
+                        <span class="card-title">基于腾讯云ubuntu18.04版本搭建Hyperledger Fabric</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1114,7 +1114,7 @@ Endorsement<span class="token operator">:</span>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-03
                             </span>
                         <span class="publish-author">
                             
@@ -1127,8 +1127,8 @@ Endorsement<span class="token operator">:</span>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%99%E7%A8%8B%E7%B1%BB/">
-                        <span class="chip bg-color">教程类</span>
+                    <a href="/tags/%E9%83%A8%E7%BD%B2%E7%B1%BB/">
+                        <span class="chip bg-color">部署类</span>
                     </a>
                     
                 </div>
